@@ -1,0 +1,37 @@
+<h1>Register</h1>
+
+<%- include('partials/messages.ejs') %>
+
+<form action="/users/register" method="post">
+    <div>
+        <label for="name">Name</label>
+        <br />
+        <input type="text" id="name" name="name" required 
+        value="<%= typeof name != 'undefined'? name : '' %>"/>
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <br />
+        <input type="email" id="email" name="email" required 
+        value="<%= typeof email != 'undefined'? email : '' %>"/>
+    </div>
+
+    <div>
+        <label for="password">Password</label>
+        <br />
+        <input type="password" id="password" name="password" required 
+        value="<%= typeof password != 'undefined'? password : '' %>"/>
+    </div>
+
+    <div>
+        <label for="password2">Confirm Password</label>
+        <br />
+        <input type="password" id="password2" name="password2" required 
+        value="<%= typeof password2 != 'undefined'? password2 : '' %>"/>
+    </div>
+
+    <button type="submit">Register</button>
+    <br />
+</form>
+<a href="/users/login">Already have an account ? Login.</a>
